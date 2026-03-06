@@ -29,8 +29,16 @@ pip install cimulator
 
 Or with uv:
 
+### Adding it locally:
+
 ```bash
 uv add cimulator
+```
+
+### Running it directly:
+
+```bash
+uvx cimulator
 ```
 
 ## Basic Usage
@@ -67,6 +75,9 @@ Warnings about job dependencies:
   - [Optional] Job 'test_mixed' needs job 'build_optnotrun' which will not run in this pipeline
 Simulation successful. Output saved to /Users/ibarkov/workspace/cimulator/simulation_output.yml
 ```
+
+In case a non-optional dependency is detected as broken during simulation, cimulator will return a non-zero exit code.
+Missing optional dependencies on the other hand are deemed innocuous and will not raise an error condition.
 
 ## License
 
